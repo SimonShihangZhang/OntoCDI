@@ -1,0 +1,3307 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://w3id.org/dio#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://w3id.org/dio#">
+    <Prefix name="" IRI="https://w3id.org/dio#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="sh" IRI="http://www.w3.org/ns/shacl#"/>
+    <Prefix name="dio" IRI="https://w3id.org/dio#"/>
+    <Prefix name="ifc" IRI="http://www.buildingsmart-tech.org/ifcOWL/IFC4X3_ADD2#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="idpo" IRI="http://w3id.org/idpo#"/>
+    <Prefix name="inst" IRI="https://dtdam/inst/"/>
+    <Prefix name="prov" IRI="http://www.w3.org/ns/prov#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="bcfOWL" IRI="http://lbd.arch.rwth-aachen.de/bcfOWL/"/>
+    <Prefix name="ifcowl" IRI="http://ifcowl.openbimstandards.org/IFC4X3_ADD2#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal xml:lang="en">Shihang Zhang (shihangzhang@tju.edu.cn)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:date"/>
+        <Literal>11-14-2025</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <Literal>The Dam Design Intent Ontology (OntoCDI) is an application ontology providing a unified conceptual framework for the multidisciplinary Concrete Face Rockfill Dam (CFRD) design lifecycle.
+
+It extends the generic Design Intent Ontology (DIO) to capture domain-specific design rationale and integrates concepts from the Information Delivery Processes Ontology (IDPO) and the bcfOWL ontology to manage project deliverables and design coordination issues.
+
+OntoCDI inherits its modular link to W3C PROV-O from DIO and is designed to formalize explicit domain knowledge for automated reasoning and decision support in knowledge-enhanced BIM workflows.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal>OntoCDI - Ontology for CFRD Design Intent</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>1.2.000</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="bcfOWL:Topic"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="bcfOWL:TopicStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="idpo:Information"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="idpo:InformationDeliverySpecification"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="prov:Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="prov:Actor"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="prov:Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="prov:DamElement"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="prov:GroundSurfaceLine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="prov:MaterialSpecifications"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="prov:RockfillMaterialSpecifications"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="sh:NodeShape"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="sh:PropertyShape"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AlternativeSolution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AquiferBoundary"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Argument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Assumption"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CharacteristicWaterLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CheckFloodLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Comment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Constraint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CushionMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CushionMaterialSpecifications"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DamCrestElevation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DamDesign"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DamElementDesign"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Design"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DesignArtifact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DesignDecision"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DesignFloodLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DesignGoal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DesignIntent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DesignIntentArtifact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DesignIssue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DesignRequirement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="EarthworksElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Evaluation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Evidence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ExcavationSpecification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="FaceSlabDesign"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="FoundationTreatment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="FoundationTreatmentSpecificationsF"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="FoundationTreatmentSpecificationsM1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="FoundationTreatmentSpecificationsM2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="FoundationTreatmentSpecificationsM3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="FoundationTreatmentSpecificationsN"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="GeologicalBoundary"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="GroudSurfaceLine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Heuristic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Justification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LowestFoundationElevation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MandatedSolution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MaterialDesign"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MaterialSpecifications"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NormalWaterLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NormalWaterLevelDownstream"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="PlinthControlPointsZ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="PlinthDesign"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="RationaleCaptureMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="RockfillMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="RockfillMaterialSpecifications"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SettlementCalculationEvidence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Solution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Specifications"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Status"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TransitionMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TransitionMaterialSpecifications"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="bcfOWL:hasTopicStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="idpo:deliverySpecification"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="idpo:hasData"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="idpo:hasRequirement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="idpo:hasSpecification"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="idpo:hasStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="idpo:isGeneratedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="idpo:isUsedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="addressedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="captureMethodology"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="contradicts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="fulfillsRequirement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="generatedByIntent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="generatesIssue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="governsDesign"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasAlternativeSolution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasArgument"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasBcfTopics"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasComment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasConstraint"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasDeliverySpecification"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasEvidence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasInformation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasJustification"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasMandatedSolution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasMaterialSpecification"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasSpecificationValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="identifiedByRequirement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="identifies"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="implementedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="leadsTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="providesAlternativeSolution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="providesMandatedSolution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="rationaleCapturedUsing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="refines"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="requirementFulfilledBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="supports"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="usesAssumption"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="usesHeuristic"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="prov:generatedAtTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="prov:value"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="DamCrestElevation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="FoundationSurfaceCompliance"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="StrongWeatheredLayerLowerBoundZ"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="freeboardCheckFloodLevelValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="freeboardDesignFloodLevelValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="freeboardNormalWaterLevelValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasControlPoints"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasControlPointsZ"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasDamHeight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasDeformationModulus"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasSettlementValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasThickness"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasUpstreamFaceSlope"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasUpstreamFaceSlopeParameter1"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasUpstreamFaceSlopeParameter2"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasWidth"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="maxFreeboardValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="referencesCurve"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="version"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="bcfOWL:Active"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Active"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="OnHold"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Resolved"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Terminated"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:date"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="idpo:isSpecificationOf"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:qualifiedCardinality"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="sh:maxCount"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="sh:minCount"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="sh:path"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="sh:property"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="sh:qualifiedMinCount"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="sh:qualifiedValueShape"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="sh:value"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="DesignGoal"/>
+        <Class IRI="DesignIssue"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:Actor"/>
+        <Class abbreviatedIRI="prov:Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:DamElement"/>
+        <Class abbreviatedIRI="prov:Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:GroundSurfaceLine"/>
+        <Class abbreviatedIRI="prov:Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:MaterialSpecifications"/>
+        <Class abbreviatedIRI="prov:Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:RockfillMaterialSpecifications"/>
+        <Class abbreviatedIRI="prov:Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="prov:RockfillMaterialSpecifications"/>
+        <Class abbreviatedIRI="prov:MaterialSpecifications"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AlternativeSolution"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AlternativeSolution"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AlternativeSolution"/>
+        <Class IRI="Solution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AquiferBoundary"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AquiferBoundary"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AquiferBoundary"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Argument"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Argument"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Assumption"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Assumption"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CharacteristicWaterLevel"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CharacteristicWaterLevel"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CharacteristicWaterLevel"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CheckFloodLevel"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CheckFloodLevel"/>
+        <Class IRI="CharacteristicWaterLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CheckFloodLevel"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CheckFloodLevel"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Comment"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Comment"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Constraint"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Constraint"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CushionMaterial"/>
+        <Class IRI="DamDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CushionMaterial"/>
+        <Class IRI="Design"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CushionMaterial"/>
+        <Class IRI="MaterialDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DamCrestElevation"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DamCrestElevation"/>
+        <Class IRI="DesignDecision"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DamCrestElevation"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DamDesign"/>
+        <Class IRI="Design"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DamElementDesign"/>
+        <Class IRI="DamDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DamElementDesign"/>
+        <Class IRI="Design"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignFloodLevel"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignFloodLevel"/>
+        <Class IRI="CharacteristicWaterLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignFloodLevel"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignFloodLevel"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignGoal"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignGoal"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignGoal"/>
+        <Class IRI="DesignIssue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignGoal"/>
+        <ObjectIntersectionOf>
+            <Class IRI="DesignIntentArtifact"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasAlternativeSolution"/>
+                <Class IRI="AlternativeSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectMaxCardinality cardinality="1">
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectMaxCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignGoal"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasAlternativeSolution"/>
+            <Class IRI="AlternativeSolution"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignGoal"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasMandatedSolution"/>
+            <Class IRI="MandatedSolution"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignGoal"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="hasMandatedSolution"/>
+            <Class IRI="MandatedSolution"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignIntent"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignIntent"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignIntentArtifact"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignIssue"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignIssue"/>
+        <Class IRI="DesignGoal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignIssue"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignIssue"/>
+        <ObjectIntersectionOf>
+            <Class IRI="DesignIntentArtifact"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasAlternativeSolution"/>
+                <Class IRI="AlternativeSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectMaxCardinality cardinality="1">
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectMaxCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignIssue"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasAlternativeSolution"/>
+            <Class IRI="AlternativeSolution"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignIssue"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasMandatedSolution"/>
+            <Class IRI="MandatedSolution"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignIssue"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="hasMandatedSolution"/>
+            <Class IRI="MandatedSolution"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignRequirement"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DesignRequirement"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="EarthworksElement"/>
+        <Class IRI="DamDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="EarthworksElement"/>
+        <Class IRI="Design"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Evaluation"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Evaluation"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Evidence"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Evidence"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ExcavationSpecification"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ExcavationSpecification"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ExcavationSpecification"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ExcavationSpecification"/>
+        <Class IRI="Specifications"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FaceSlabDesign"/>
+        <Class IRI="DamDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FaceSlabDesign"/>
+        <Class IRI="Design"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatment"/>
+        <Class abbreviatedIRI="prov:Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsF"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsF"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsF"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsF"/>
+        <Class IRI="Specifications"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsM1"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsM1"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsM1"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsM1"/>
+        <Class IRI="Specifications"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsM2"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsM2"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsM2"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsM2"/>
+        <Class IRI="Specifications"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsM3"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsM3"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsM3"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsM3"/>
+        <Class IRI="Specifications"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsN"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsN"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsN"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FoundationTreatmentSpecificationsN"/>
+        <Class IRI="Specifications"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="GeologicalBoundary"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="GeologicalBoundary"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="GeologicalBoundary"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="GroudSurfaceLine"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="GroudSurfaceLine"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="GroudSurfaceLine"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Heuristic"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Heuristic"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Justification"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Justification"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LowestFoundationElevation"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LowestFoundationElevation"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LowestFoundationElevation"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MandatedSolution"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MandatedSolution"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MandatedSolution"/>
+        <Class IRI="Solution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MaterialDesign"/>
+        <Class IRI="DamDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MaterialDesign"/>
+        <Class IRI="Design"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NormalWaterLevel"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NormalWaterLevel"/>
+        <Class IRI="CharacteristicWaterLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NormalWaterLevel"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NormalWaterLevel"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NormalWaterLevelDownstream"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NormalWaterLevelDownstream"/>
+        <Class IRI="CharacteristicWaterLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NormalWaterLevelDownstream"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NormalWaterLevelDownstream"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="PlinthDesign"/>
+        <Class IRI="DamDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="PlinthDesign"/>
+        <Class IRI="Design"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="RockfillMaterial"/>
+        <Class IRI="DamDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="RockfillMaterial"/>
+        <Class IRI="Design"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="RockfillMaterial"/>
+        <Class IRI="MaterialDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SettlementCalculationEvidence"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SettlementCalculationEvidence"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SettlementCalculationEvidence"/>
+        <Class IRI="Evidence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Solution"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Solution"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Specifications"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Specifications"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Specifications"/>
+        <Class IRI="Justification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TransitionMaterial"/>
+        <Class IRI="DamDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TransitionMaterial"/>
+        <Class IRI="Design"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TransitionMaterial"/>
+        <Class IRI="MaterialDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="DesignIntentArtifact"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasAlternativeSolution"/>
+                <Class IRI="AlternativeSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectMaxCardinality cardinality="1">
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectMaxCardinality>
+        </ObjectIntersectionOf>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="DesignIntentArtifact"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasAlternativeSolution"/>
+                <Class IRI="AlternativeSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectMaxCardinality cardinality="1">
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectMaxCardinality>
+        </ObjectIntersectionOf>
+        <Class IRI="DesignIntentArtifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="DesignIntentArtifact"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasAlternativeSolution"/>
+                <Class IRI="AlternativeSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectMaxCardinality cardinality="1">
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectMaxCardinality>
+        </ObjectIntersectionOf>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasAlternativeSolution"/>
+            <Class IRI="AlternativeSolution"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="DesignIntentArtifact"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasAlternativeSolution"/>
+                <Class IRI="AlternativeSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectMaxCardinality cardinality="1">
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectMaxCardinality>
+        </ObjectIntersectionOf>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasMandatedSolution"/>
+            <Class IRI="MandatedSolution"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="DesignIntentArtifact"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasAlternativeSolution"/>
+                <Class IRI="AlternativeSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectMaxCardinality cardinality="1">
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectMaxCardinality>
+        </ObjectIntersectionOf>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="hasMandatedSolution"/>
+            <Class IRI="MandatedSolution"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="Status"/>
+        <NamedIndividual IRI="Active"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Status"/>
+        <NamedIndividual IRI="OnHold"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Status"/>
+        <NamedIndividual IRI="Resolved"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Status"/>
+        <NamedIndividual IRI="Terminated"/>
+    </ClassAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="hasAlternativeSolution"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="hasMandatedSolution"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="leadsTo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="fulfillsRequirement"/>
+        <ObjectProperty IRI="requirementFulfilledBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="generatedByIntent"/>
+        <ObjectProperty IRI="generatesIssue"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasAlternativeSolution"/>
+        <ObjectProperty IRI="providesAlternativeSolution"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasMandatedSolution"/>
+        <ObjectProperty IRI="providesMandatedSolution"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="identifiedByRequirement"/>
+        <ObjectProperty IRI="identifies"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="contradicts"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="contradicts"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="contradicts"/>
+        <Class IRI="Solution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="fulfillsRequirement"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="fulfillsRequirement"/>
+        <Class IRI="Design"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="fulfillsRequirement"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="governsDesign"/>
+        <Class IRI="DesignDecision"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasConstraint"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasConstraint"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasConstraint"/>
+        <Class IRI="Solution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasEvidence"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasEvidence"/>
+        <Class IRI="Argument"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasEvidence"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasEvidence"/>
+        <Class IRI="Justification"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStatus"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStatus"/>
+        <Class IRI="DesignGoal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStatus"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStatus"/>
+        <Class IRI="DesignIssue"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStatus"/>
+        <ObjectIntersectionOf>
+            <Class IRI="DesignIntentArtifact"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasAlternativeSolution"/>
+                <Class IRI="AlternativeSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectAllValuesFrom>
+            <ObjectMaxCardinality cardinality="1">
+                <ObjectProperty IRI="hasMandatedSolution"/>
+                <Class IRI="MandatedSolution"/>
+            </ObjectMaxCardinality>
+        </ObjectIntersectionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStatus"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasAlternativeSolution"/>
+            <Class IRI="AlternativeSolution"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStatus"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasMandatedSolution"/>
+            <Class IRI="MandatedSolution"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStatus"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="hasMandatedSolution"/>
+            <Class IRI="MandatedSolution"/>
+        </ObjectMaxCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="leadsTo"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="leadsTo"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="leadsTo"/>
+        <Class IRI="MandatedSolution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="leadsTo"/>
+        <Class IRI="Solution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="refines"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="refines"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="refines"/>
+        <Class IRI="Solution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesAssumption"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesAssumption"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesAssumption"/>
+        <Class IRI="Solution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesHeuristic"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesHeuristic"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesHeuristic"/>
+        <Class IRI="Solution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="contradicts"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="contradicts"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="contradicts"/>
+        <Class IRI="Solution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="fulfillsRequirement"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="fulfillsRequirement"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="fulfillsRequirement"/>
+        <Class IRI="DesignRequirement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="governsDesign"/>
+        <Class IRI="Design"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasAlternativeSolution"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasAlternativeSolution"/>
+        <Class IRI="AlternativeSolution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasAlternativeSolution"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasAlternativeSolution"/>
+        <Class IRI="Solution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasArgument"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasArgument"/>
+        <Class IRI="Argument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasArgument"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasConstraint"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasConstraint"/>
+        <Class IRI="Constraint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasConstraint"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasEvidence"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasEvidence"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasEvidence"/>
+        <Class IRI="Evidence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasJustification"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasJustification"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasJustification"/>
+        <Class IRI="Justification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasMandatedSolution"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasMandatedSolution"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasMandatedSolution"/>
+        <Class IRI="MandatedSolution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasMandatedSolution"/>
+        <Class IRI="Solution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasStatus"/>
+        <Class IRI="Status"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="leadsTo"/>
+        <Class IRI="DesignDecision"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="refines"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="refines"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="refines"/>
+        <Class IRI="Solution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="supports"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="supports"/>
+        <Class IRI="Argument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="supports"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="supports"/>
+        <Class IRI="Justification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesAssumption"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesAssumption"/>
+        <Class IRI="Assumption"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesAssumption"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesHeuristic"/>
+        <Class abbreviatedIRI="prov:Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesHeuristic"/>
+        <Class IRI="DesignIntentArtifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesHeuristic"/>
+        <Class IRI="Heuristic"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="version"/>
+    </FunctionalDataProperty>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S14</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="DesignIssue"/>
+                <Variable IRI="urn:swrl:var#designIssue"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasStatus"/>
+                <Variable IRI="urn:swrl:var#designIssue"/>
+                <NamedIndividual IRI="Active"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasBcfTopics"/>
+                <Variable IRI="urn:swrl:var#designIssue"/>
+                <Variable IRI="urn:swrl:var#bcfTopic"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="bcfOWL:Topic"/>
+                <Variable IRI="urn:swrl:var#bcfTopic"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="bcfOWL:hasTopicStatus"/>
+                <Variable IRI="urn:swrl:var#bcfTopic"/>
+                <NamedIndividual abbreviatedIRI="bcfOWL:Active"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S22</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="AlternativeSolution"/>
+                <Variable IRI="solution"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasJustification"/>
+                <Variable IRI="solution"/>
+                <Variable IRI="SpecificationsF"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="FoundationTreatmentSpecificationsF"/>
+                <Variable IRI="SpecificationsF"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="SpecificationsF"/>
+                <Variable IRI="SpecificationsFValue"/>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="referencesCurve"/>
+                <Variable IRI="solution"/>
+                <Variable IRI="SpecificationsFValue"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S19</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="AlternativeSolution"/>
+                <Variable IRI="solution"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasJustification"/>
+                <Variable IRI="solution"/>
+                <Variable IRI="SpecificationsM1"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="FoundationTreatmentSpecificationsM1"/>
+                <Variable IRI="SpecificationsM1"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="SpecificationsM1"/>
+                <Variable IRI="SpecificationsM1Value"/>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="referencesCurve"/>
+                <Variable IRI="solution"/>
+                <Variable IRI="SpecificationsM1Value"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S20</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="AlternativeSolution"/>
+                <Variable IRI="solution"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasJustification"/>
+                <Variable IRI="solution"/>
+                <Variable IRI="SpecificationsM2"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="FoundationTreatmentSpecificationsM2"/>
+                <Variable IRI="SpecificationsM2"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="SpecificationsM2"/>
+                <Variable IRI="SpecificationsM2Value"/>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="referencesCurve"/>
+                <Variable IRI="solution"/>
+                <Variable IRI="SpecificationsM2Value"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S21</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="AlternativeSolution"/>
+                <Variable IRI="solution"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasJustification"/>
+                <Variable IRI="solution"/>
+                <Variable IRI="SpecificationsM3"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="FoundationTreatmentSpecificationsM3"/>
+                <Variable IRI="SpecificationsM3"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="SpecificationsM3"/>
+                <Variable IRI="SpecificationsM3Value"/>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="referencesCurve"/>
+                <Variable IRI="solution"/>
+                <Variable IRI="SpecificationsM3Value"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S18</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="AlternativeSolution"/>
+                <Variable IRI="solution"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasJustification"/>
+                <Variable IRI="solution"/>
+                <Variable IRI="specificationsN"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="FoundationTreatmentSpecificationsN"/>
+                <Variable IRI="specificationsN"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="specificationsN"/>
+                <Variable IRI="specificationsNValue"/>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="referencesCurve"/>
+                <Variable IRI="solution"/>
+                <Variable IRI="specificationsNValue"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S3</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="MandatedSolution"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasJustification"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#checkedLevel"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="CheckFloodLevel"/>
+                <Variable IRI="urn:swrl:var#checkedLevel"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="urn:swrl:var#checkedLevel"/>
+                <Variable IRI="urn:swrl:var#checkedValue"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#add">
+                <Variable IRI="urn:swrl:var#adjustedCheckedValue"/>
+                <Variable IRI="urn:swrl:var#checkedValue"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">6.9</Literal>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="freeboardCheckFloodLevelValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#adjustedCheckedValue"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S8</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="MandatedSolution"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasJustification"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#lowestFoundationElevation"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="LowestFoundationElevation"/>
+                <Variable IRI="urn:swrl:var#lowestFoundationElevation"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="urn:swrl:var#lowestFoundationElevation"/>
+                <Variable IRI="urn:swrl:var#foundationValue"/>
+            </DataPropertyAtom>
+            <ClassAtom>
+                <Class IRI="DamCrestElevation"/>
+                <Variable IRI="urn:swrl:var#crestElevation"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="urn:swrl:var#crestElevation"/>
+                <Variable IRI="urn:swrl:var#crestValue"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#subtract">
+                <Variable IRI="urn:swrl:var#damHeightValue"/>
+                <Variable IRI="urn:swrl:var#crestValue"/>
+                <Variable IRI="urn:swrl:var#foundationValue"/>
+            </BuiltInAtom>
+            <ClassAtom>
+                <Class IRI="DamElementDesign"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDamHeight"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+                <Variable IRI="urn:swrl:var#damHeightValue"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S7</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="MandatedSolution"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="maxFreeboardValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#maxFreeboard"/>
+            </DataPropertyAtom>
+            <ClassAtom>
+                <Class IRI="DamCrestElevation"/>
+                <Variable IRI="urn:swrl:var#damCrestElevation"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="urn:swrl:var#damCrestElevation"/>
+                <Variable IRI="urn:swrl:var#maxFreeboard"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S11</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="SettlementCalculationEvidence"/>
+                <Variable IRI="urn:swrl:var#settlementEvidence"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDamHeight"/>
+                <Variable IRI="urn:swrl:var#settlementEvidence"/>
+                <Variable IRI="urn:swrl:var#settlementDamHeight"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDeformationModulus"/>
+                <Variable IRI="urn:swrl:var#settlementEvidence"/>
+                <Variable IRI="urn:swrl:var#settlementDeformationModulus"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasSettlementValue"/>
+                <Variable IRI="urn:swrl:var#settlementEvidence"/>
+                <Variable IRI="urn:swrl:var#settlementValue"/>
+            </DataPropertyAtom>
+            <ClassAtom>
+                <Class IRI="DamElementDesign"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDamHeight"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+                <Variable IRI="urn:swrl:var#damDamHeight"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDeformationModulus"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+                <Variable IRI="urn:swrl:var#damDeformationModulus"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#divide">
+                <Variable IRI="urn:swrl:var#heightRatio"/>
+                <Variable IRI="urn:swrl:var#damDamHeight"/>
+                <Variable IRI="urn:swrl:var#settlementDamHeight"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#multiply">
+                <Variable IRI="urn:swrl:var#heightRatioSquared"/>
+                <Variable IRI="urn:swrl:var#heightRatio"/>
+                <Variable IRI="urn:swrl:var#heightRatio"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#multiply">
+                <Variable IRI="urn:swrl:var#modulusRatio"/>
+                <Variable IRI="urn:swrl:var#heightRatioSquared"/>
+                <Variable IRI="urn:swrl:var#settlementDeformationModulus"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#divide">
+                <Variable IRI="urn:swrl:var#finalValue"/>
+                <Variable IRI="urn:swrl:var#modulusRatio"/>
+                <Variable IRI="urn:swrl:var#damDeformationModulus"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#multiply">
+                <Variable IRI="urn:swrl:var#settlementResult"/>
+                <Variable IRI="urn:swrl:var#finalValue"/>
+                <Variable IRI="urn:swrl:var#settlementValue"/>
+            </BuiltInAtom>
+            <ClassAtom>
+                <Class IRI="DamDesign"/>
+                <Variable IRI="urn:swrl:var#damDesign"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasSettlementValue"/>
+                <Variable IRI="urn:swrl:var#damDesign"/>
+                <Variable IRI="urn:swrl:var#settlementResult"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S9</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="DamElementDesign"/>
+                <Variable IRI="urn:swrl:var#damElement"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDamHeight"/>
+                <Variable IRI="urn:swrl:var#damElement"/>
+                <Variable IRI="urn:swrl:var#damHeight"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#multiply">
+                <Variable IRI="urn:swrl:var#increment"/>
+                <Variable IRI="urn:swrl:var#damHeight"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0.003</Literal>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#add">
+                <Variable IRI="urn:swrl:var#thickness"/>
+                <Variable IRI="urn:swrl:var#increment"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0.3</Literal>
+            </BuiltInAtom>
+            <ClassAtom>
+                <Class IRI="FaceSlabDesign"/>
+                <Variable IRI="urn:swrl:var#faceSlab"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasThickness"/>
+                <Variable IRI="urn:swrl:var#faceSlab"/>
+                <Variable IRI="urn:swrl:var#thickness"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S12</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="SettlementCalculationEvidence"/>
+                <Variable IRI="urn:swrl:var#settlementEvidence"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDamHeight"/>
+                <Variable IRI="urn:swrl:var#settlementEvidence"/>
+                <Variable IRI="urn:swrl:var#settlementDamHeight"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDeformationModulus"/>
+                <Variable IRI="urn:swrl:var#settlementEvidence"/>
+                <Variable IRI="urn:swrl:var#settlementDeformationModulus"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasSettlementValue"/>
+                <Variable IRI="urn:swrl:var#settlementEvidence"/>
+                <Variable IRI="urn:swrl:var#settlementValue"/>
+            </DataPropertyAtom>
+            <ClassAtom>
+                <Class IRI="DamElementDesign"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDamHeight"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+                <Variable IRI="urn:swrl:var#damDamHeight"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDeformationModulus"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+                <Variable IRI="urn:swrl:var#damDeformationModulus"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#divide">
+                <Variable IRI="urn:swrl:var#heightRatio"/>
+                <Variable IRI="urn:swrl:var#damDamHeight"/>
+                <Variable IRI="urn:swrl:var#settlementDamHeight"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#multiply">
+                <Variable IRI="urn:swrl:var#heightRatioSquared"/>
+                <Variable IRI="urn:swrl:var#heightRatio"/>
+                <Variable IRI="urn:swrl:var#heightRatio"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#multiply">
+                <Variable IRI="urn:swrl:var#modulusRatio"/>
+                <Variable IRI="urn:swrl:var#heightRatioSquared"/>
+                <Variable IRI="urn:swrl:var#settlementDeformationModulus"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#divide">
+                <Variable IRI="urn:swrl:var#finalValue"/>
+                <Variable IRI="urn:swrl:var#modulusRatio"/>
+                <Variable IRI="urn:swrl:var#damDeformationModulus"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#multiply">
+                <Variable IRI="urn:swrl:var#settlementResult"/>
+                <Variable IRI="urn:swrl:var#finalValue"/>
+                <Variable IRI="urn:swrl:var#settlementValue"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasSettlementValue"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+                <Variable IRI="urn:swrl:var#settlementResult"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S16</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="SettlementCalculationEvidence"/>
+                <Variable IRI="urn:swrl:var#settlementEvidence"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDamHeight"/>
+                <Variable IRI="urn:swrl:var#settlementEvidence"/>
+                <Variable IRI="urn:swrl:var#settlementDamHeight"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDeformationModulus"/>
+                <Variable IRI="urn:swrl:var#settlementEvidence"/>
+                <Variable IRI="urn:swrl:var#settlementDeformationModulus"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasSettlementValue"/>
+                <Variable IRI="urn:swrl:var#settlementEvidence"/>
+                <Variable IRI="urn:swrl:var#settlementValue"/>
+            </DataPropertyAtom>
+            <ClassAtom>
+                <Class IRI="DamElementDesign"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDamHeight"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+                <Variable IRI="urn:swrl:var#damHeight"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasDeformationModulus"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+                <Variable IRI="urn:swrl:var#damDeformationModulus"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#divide">
+                <Variable IRI="urn:swrl:var#heightRatio"/>
+                <Variable IRI="urn:swrl:var#damHeight"/>
+                <Variable IRI="urn:swrl:var#settlementDamHeight"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#multiply">
+                <Variable IRI="urn:swrl:var#heightRatioSquared"/>
+                <Variable IRI="urn:swrl:var#heightRatio"/>
+                <Variable IRI="urn:swrl:var#heightRatio"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#multiply">
+                <Variable IRI="urn:swrl:var#modulusRatio"/>
+                <Variable IRI="urn:swrl:var#heightRatioSquared"/>
+                <Variable IRI="urn:swrl:var#settlementDeformationModulus"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#divide">
+                <Variable IRI="urn:swrl:var#finalValue"/>
+                <Variable IRI="urn:swrl:var#modulusRatio"/>
+                <Variable IRI="urn:swrl:var#damDeformationModulus"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#multiply">
+                <Variable IRI="urn:swrl:var#settlementResult"/>
+                <Variable IRI="urn:swrl:var#finalValue"/>
+                <Variable IRI="urn:swrl:var#settlementValue"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasSettlementValue"/>
+                <Variable IRI="urn:swrl:var#damElementDesign"/>
+                <Variable IRI="urn:swrl:var#settlementResult"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S15</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="Design"/>
+                <Variable IRI="urn:swrl:var#design"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasInformation"/>
+                <Variable IRI="urn:swrl:var#design"/>
+                <Variable IRI="urn:swrl:var#information"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="idpo:hasSpecification"/>
+                <Variable IRI="urn:swrl:var#information"/>
+                <Variable IRI="urn:swrl:var#specification"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="idpo:deliverySpecification"/>
+                <Variable IRI="urn:swrl:var#specification"/>
+                <Variable IRI="urn:swrl:var#deliverySpec"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasDeliverySpecification"/>
+                <Variable IRI="urn:swrl:var#design"/>
+                <Variable IRI="urn:swrl:var#deliverySpec"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S2</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="MandatedSolution"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasJustification"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#designLevel"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="DesignFloodLevel"/>
+                <Variable IRI="urn:swrl:var#designLevel"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="urn:swrl:var#designLevel"/>
+                <Variable IRI="urn:swrl:var#designValue"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#add">
+                <Variable IRI="urn:swrl:var#adjustedDesignValue"/>
+                <Variable IRI="urn:swrl:var#designValue"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2.37</Literal>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="freeboardDesignFloodLevelValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#adjustedDesignValue"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>S1</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S1</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="MandatedSolution"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasJustification"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#normalLevel"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="NormalWaterLevel"/>
+                <Variable IRI="urn:swrl:var#normalLevel"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="urn:swrl:var#normalLevel"/>
+                <Variable IRI="urn:swrl:var#normalValue"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#add">
+                <Variable IRI="urn:swrl:var#freeboardNormalValue"/>
+                <Variable IRI="urn:swrl:var#normalValue"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4.0</Literal>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="freeboardNormalWaterLevelValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardNormalValue"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S6</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="MandatedSolution"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="freeboardNormalWaterLevelValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardNormalValue"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="freeboardDesignFloodLevelValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardDesignValue"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="freeboardCheckFloodLevelValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardCheckedValue"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual">
+                <Variable IRI="urn:swrl:var#freeboardCheckedValue"/>
+                <Variable IRI="urn:swrl:var#freeboardNormalValue"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual">
+                <Variable IRI="urn:swrl:var#freeboardCheckedValue"/>
+                <Variable IRI="urn:swrl:var#freeboardDesignValue"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="maxFreeboardValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardCheckedValue"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S5</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="MandatedSolution"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="freeboardNormalWaterLevelValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardNormalValue"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="freeboardDesignFloodLevelValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardDesignValue"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="freeboardCheckFloodLevelValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardCheckedValue"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual">
+                <Variable IRI="urn:swrl:var#freeboardDesignValue"/>
+                <Variable IRI="urn:swrl:var#freeboardNormalValue"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual">
+                <Variable IRI="urn:swrl:var#freeboardDesignValue"/>
+                <Variable IRI="urn:swrl:var#freeboardCheckedValue"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="maxFreeboardValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardDesignValue"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S4</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="MandatedSolution"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="freeboardNormalWaterLevelValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardNormalValue"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="freeboardDesignFloodLevelValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardDesignValue"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="freeboardCheckFloodLevelValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardCheckedValue"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual">
+                <Variable IRI="urn:swrl:var#freeboardNormalValue"/>
+                <Variable IRI="urn:swrl:var#freeboardDesignValue"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual">
+                <Variable IRI="urn:swrl:var#freeboardNormalValue"/>
+                <Variable IRI="urn:swrl:var#freeboardCheckedValue"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="maxFreeboardValue"/>
+                <Variable IRI="urn:swrl:var#solution"/>
+                <Variable IRI="urn:swrl:var#freeboardNormalValue"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S17</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="MaterialDesign"/>
+                <Variable IRI="urn:swrl:var#material"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="hasMaterialSpecification"/>
+                <Variable IRI="urn:swrl:var#material"/>
+                <Variable IRI="urn:swrl:var#spec"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="urn:swrl:var#spec"/>
+                <Variable IRI="urn:swrl:var#specValue"/>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="urn:swrl:var#material"/>
+                <Variable IRI="urn:swrl:var#specValue"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S10</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="NormalWaterLevel"/>
+                <Variable IRI="urn:swrl:var#normalLevel"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="urn:swrl:var#normalLevel"/>
+                <Variable IRI="urn:swrl:var#normalValue"/>
+            </DataPropertyAtom>
+            <ClassAtom>
+                <Class IRI="NormalWaterLevelDownstream"/>
+                <Variable IRI="urn:swrl:var#downstreamLevel"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="prov:value"/>
+                <Variable IRI="urn:swrl:var#downstreamLevel"/>
+                <Variable IRI="urn:swrl:var#downstreamValue"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#subtract">
+                <Variable IRI="urn:swrl:var#difference"/>
+                <Variable IRI="urn:swrl:var#normalValue"/>
+                <Variable IRI="urn:swrl:var#downstreamValue"/>
+            </BuiltInAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#divide">
+                <Variable IRI="urn:swrl:var#width"/>
+                <Variable IRI="urn:swrl:var#difference"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10</Literal>
+            </BuiltInAtom>
+            <ClassAtom>
+                <Class IRI="PlinthDesign"/>
+                <Variable IRI="urn:swrl:var#plinth"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasWidth"/>
+                <Variable IRI="urn:swrl:var#plinth"/>
+                <Variable IRI="urn:swrl:var#width"/>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S13</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="PlinthDesign"/>
+                <Variable IRI="urn:swrl:var#plinth"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasControlPoints"/>
+                <Variable IRI="urn:swrl:var#plinth"/>
+                <Variable IRI="urn:swrl:var#controlPoint"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasControlPointsZ"/>
+                <Variable IRI="urn:swrl:var#controlPoint"/>
+                <Variable IRI="urn:swrl:var#controlZ"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="StrongWeatheredLayerLowerBoundZ"/>
+                <Variable IRI="urn:swrl:var#controlPoint"/>
+                <Variable IRI="urn:swrl:var#lowerBoundZ"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#lessThan">
+                <Variable IRI="urn:swrl:var#controlZ"/>
+                <Variable IRI="urn:swrl:var#lowerBoundZ"/>
+            </BuiltInAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasControlPoints"/>
+                <Variable IRI="urn:swrl:var#plinth"/>
+                <Variable IRI="urn:swrl:var#controlPoint1"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasControlPoints"/>
+                <Variable IRI="urn:swrl:var#plinth"/>
+                <Variable IRI="urn:swrl:var#controlPoint2"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="hasControlPoints"/>
+                <Variable IRI="urn:swrl:var#plinth"/>
+                <Variable IRI="urn:swrl:var#controlPoint3"/>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="FoundationSurfaceCompliance"/>
+                <Variable IRI="urn:swrl:var#plinth"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Active</IRI>
+        <Literal>The status of an issue when it is active.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Active</IRI>
+        <Literal>Active</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AlternativeSolution</IRI>
+        <Literal>An entity representing the proposed solution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AlternativeSolution</IRI>
+        <Literal>Alternative Solution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AquiferBoundary</IRI>
+        <Literal>AquiferBoundary</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Argument</IRI>
+        <Literal>A reason presented against a proposed solution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Argument</IRI>
+        <Literal>Argument</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Assumption</IRI>
+        <Literal>The assumption on which a proposed solution is based.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Assumption</IRI>
+        <Literal>Assumption</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CharacteristicWaterLevel</IRI>
+        <Literal>CharacteristicWaterLevel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CheckFloodLevel</IRI>
+        <Literal>CheckFloodLevel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Comment</IRI>
+        <Literal>A comment made by an agent in response to an argument, a justification or another comment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Comment</IRI>
+        <Literal>Comment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Constraint</IRI>
+        <Literal>A constraint that underlies the proposed solution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Constraint</IRI>
+        <Literal>Constraint</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CushionMaterial</IRI>
+        <Literal>Cushion Material Design</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DamCrestElevation</IRI>
+        <Literal>DamCrestElevation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DamDesign</IRI>
+        <Literal>Dam Design</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DamElementDesign</IRI>
+        <Literal>Dam Element Design</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Design</IRI>
+        <Literal>A design is a specification of an object, manifested by an agent, intended to accomplish goals, in a particular environment, using a set of  components, satisfying a set of requirements, subject to constraints.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Design</IRI>
+        <Literal>Design</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DesignArtifact</IRI>
+        <Literal>The concrete artifact that is implemented or developed following the design that emerges from the design decisions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DesignArtifact</IRI>
+        <Literal>Design Artifact</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DesignDecision</IRI>
+        <Literal>The final design decision made based on the various alternative solutions proposed. A design decision is driven by a mandated solution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DesignDecision</IRI>
+        <Literal>Design Decision</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DesignFloodLevel</IRI>
+        <Literal>DesignFloodLevel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DesignGoal</IRI>
+        <Literal>An entity representing the problem, goal, question or issue the design intent aims to address.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DesignGoal</IRI>
+        <Literal>Design Goal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DesignIntent</IRI>
+        <Literal>A entity defining the notion of a design intent, i.e., the rationale underpinning the choices that are made from the alternatives available during various phases of the overall design lifecycle.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DesignIntent</IRI>
+        <Literal>Design Intent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DesignIntentArtifact</IRI>
+        <Literal>An entity representing any artifact that plays a part in capturing the design intent. The minimum ontological commitment required for this entity is a brief description of the artifact, the version info and the date.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DesignIntentArtifact</IRI>
+        <Literal>Design Intent Artifact</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DesignIssue</IRI>
+        <Literal>An entity representing the problem, goal, question or issue the design intent aims to address.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DesignIssue</IRI>
+        <Literal>Design Issue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DesignRequirement</IRI>
+        <Literal>An entity capturing the requirements that result in the design intent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DesignRequirement</IRI>
+        <Literal>Design Requirements</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>EarthworksElement</IRI>
+        <Literal>Earthworks Element</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Evaluation</IRI>
+        <Literal>An entity representing the evaluation that supports the solution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Evaluation</IRI>
+        <Literal>Evaluation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Evidence</IRI>
+        <Literal>An entity representing an evidence that supports a proposed solution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Evidence</IRI>
+        <Literal>Evidence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ExcavationSpecification</IRI>
+        <Literal>ExcavationSpecification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>FaceSlabDesign</IRI>
+        <Literal>Face Slab Design</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>FoundationTreatmentSpecificationsF</IRI>
+        <Literal>FoundationTreatmentSpecificationsF</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>FoundationTreatmentSpecificationsM1</IRI>
+        <Literal>FoundationTreatmentSpecificationsM1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>FoundationTreatmentSpecificationsM2</IRI>
+        <Literal>FoundationTreatmentSpecificationsM2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>FoundationTreatmentSpecificationsM3</IRI>
+        <Literal>FoundationTreatmentSpecificationsM3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>FoundationTreatmentSpecificationsN</IRI>
+        <Literal>FoundationTreatmentSpecificationsN</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GeologicalBoundary</IRI>
+        <Literal>GeologicalBoundary</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GroudSurfaceLine</IRI>
+        <Literal>GroudSurfaceLine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Heuristic</IRI>
+        <Literal>An entity representing the requirements to be fulfilled for realising the solution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Heuristic</IRI>
+        <Literal>Heuristic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Justification</IRI>
+        <Literal>A reason supporting the proposed solution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Justification</IRI>
+        <Literal>Justification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>LowestFoundationElevation</IRI>
+        <Literal>LowestFoundationElevation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>MandatedSolution</IRI>
+        <Literal>An entity representing the solution accepted as a result of the design deliberation process.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>MandatedSolution</IRI>
+        <Literal>Mandated Solution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>MaterialDesign</IRI>
+        <Literal>Dam Material Design</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>NormalWaterLevel</IRI>
+        <Literal>NormalWaterLevel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>NormalWaterLevelDownstream</IRI>
+        <Literal>NormalWaterLevelDownstream</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>OnHold</IRI>
+        <Literal>The status of an issue when it is onHold</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>OnHold</IRI>
+        <Literal>onHold</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>PlinthDesign</IRI>
+        <Literal>Plinth Design</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>RationaleCaptureMethod</IRI>
+        <Literal>An entity representing the methodology used to capture the design intent artifact</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RationaleCaptureMethod</IRI>
+        <Literal>Rationale Capture Methodology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Resolved</IRI>
+        <Literal>The status of an issue when it is resolved.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RockfillMaterial</IRI>
+        <Literal>Dam Rockfill Material Design</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Solution</IRI>
+        <Literal>Solution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Specifications</IRI>
+        <Literal>Specifications</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Status</IRI>
+        <Literal>An entity representing the status of a design issue.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Status</IRI>
+        <Literal>Status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Terminated</IRI>
+        <Literal>The status of an issue when it is terminated.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TransitionMaterial</IRI>
+        <Literal>Transition Material Design</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>addressedBy</IRI>
+        <Literal>A relationship stating the design intent addressing a requirement.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>addressedBy</IRI>
+        <Literal>addressedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>captureMethodology</IRI>
+        <Literal>A relationship identifying the capture methodology for a design issue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>captureMethodology</IRI>
+        <Literal>captureMethodology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>contradicts</IRI>
+        <Literal>A relationship indicating contradictory issues.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>contradicts</IRI>
+        <Literal>contradicts</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>fulfillsRequirement</IRI>
+        <Literal>A relationship between the design and its requirement.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>fulfillsRequirement</IRI>
+        <Literal>fullfillsRequirements</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>generatedByIntent</IRI>
+        <Literal>A relationship between the design issue and intent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>generatedByIntent</IRI>
+        <Literal>generatedByIntent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>generatesIssue</IRI>
+        <Literal>A relationship between the design intent and issue.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>generatesIssue</IRI>
+        <Literal>generatesIssue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>governsDesign</IRI>
+        <Literal>The design decision governing the design.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>governsDesign</IRI>
+        <Literal>governsDesign</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasAlternativeSolution</IRI>
+        <Literal>The realtionship between the issue and an alternative solution for it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasAlternativeSolution</IRI>
+        <Literal>hasAlternativeSolution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasArgument</IRI>
+        <Literal>The relationship between a solution and an argument made against it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasArgument</IRI>
+        <Literal>hasArgument</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasComment</IRI>
+        <Literal>The relationship between a comment and a design intent artifact for which the comment is made.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasComment</IRI>
+        <Literal>hasComment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasConstraint</IRI>
+        <Literal>A relationship between a solution and a constarint on it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasConstraint</IRI>
+        <Literal>hasConstraint</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasEvidence</IRI>
+        <Literal>A relationship between a solution and an evidence for it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasEvidence</IRI>
+        <Literal>hasEvidence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasJustification</IRI>
+        <Literal>A relationship between a solution and the justification for it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasJustification</IRI>
+        <Literal>hasJustification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasMandatedSolution</IRI>
+        <Literal>A relationship between the issue and its mandated solution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasMandatedSolution</IRI>
+        <Literal>hasMandatedSolution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasStatus</IRI>
+        <Literal>The relationship between an issue and its status.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasStatus</IRI>
+        <Literal>hasStatus</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>identifiedByRequirement</IRI>
+        <Literal>The relationship between an issue and the requirement that identifies it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>identifiedByRequirement</IRI>
+        <Literal>identifiedByRequirement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>identifies</IRI>
+        <Literal>A relationship between the requirement and the issue it identifies.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>leadsTo</IRI>
+        <Literal>A relationship between a mandated solution and design decision made based on it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>leadsTo</IRI>
+        <Literal>leadsTo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>providesAlternativeSolution</IRI>
+        <Literal>A relationship between an alternative solution and the issue.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>providesAlternativeSolution</IRI>
+        <Literal>providesAlternativeSolution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>providesMandatedSolution</IRI>
+        <Literal>A relationship between a mandated solution and the issue.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>providesMandatedSolution</IRI>
+        <Literal>providesMandatedSolution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>rationaleCapturedUsing</IRI>
+        <Literal>A relationship between the design rationale and its capture methodology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>rationaleCapturedUsing</IRI>
+        <Literal>rationaleCapturedUsing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>refines</IRI>
+        <Literal>A relationship between two requirememts when one refines the other.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>refines</IRI>
+        <Literal>refines</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>requirementFulfilledBy</IRI>
+        <Literal>A relationship between the design and its originating requirements</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>requirementFulfilledBy</IRI>
+        <Literal>requirementFulfilledBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>supports</IRI>
+        <Literal>A relationship between an agent and a design solution argument or justification.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>supports</IRI>
+        <Literal>supports</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>usesAssumption</IRI>
+        <Literal>A relationship between a solution and the Assumption it makes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>usesAssumption</IRI>
+        <Literal>usesAssumption</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>usesHeuristic</IRI>
+        <Literal>A relationship between a solution and the heuristic iy uses.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>usesHeuristic</IRI>
+        <Literal>usesHeuristic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:qualifiedCardinality"/>
+        <AnonymousIndividual nodeID="_:genid2147483651"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
